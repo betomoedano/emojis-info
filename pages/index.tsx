@@ -2,17 +2,15 @@ import * as React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import emojisData from '../data/emojis';
+import Layout from '../components/layout';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Emojis Info</title>
-        <meta name="description" content="Informations about emojis" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <h1 className="text-4xl">Emojis Info</h1>
-    </div>
+    <Layout pageTitle="Emojis Info" metaDescription="A list of emojis">
+      <h1 className=" text-4xl font-bold text-text-primary text-center">
+        Emojis Info 💡
+      </h1>
+    </Layout>
   );
 };
 
