@@ -15,10 +15,10 @@ const Home: NextPage = () => {
           className="w-full max-w-xl border border-gray-300 p-3 rounded-md m-8 bg-white shadow-md focus:outline-none focus:border-cyan-500 focus:ring-1"
           id="name"
           type="text"
-          placeholder="Name"
+          placeholder="Search for an emoji"
         />
       </div>
-      <List emojis={emojisData} />
+      <List emojis={emojisData.slice(0, 20)} />
     </Layout>
   );
 };

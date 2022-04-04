@@ -145,15 +145,7 @@ const emojisData = [
   },
   {
     code: '263A FE0F',
-    emoji: '☺️',
-    name: 'smiling face',
-    category: 'Smileys & Emotion (face-affection)',
-    group: 'Smileys & Emotion',
-    subgroup: 'face-affection',
-  },
-  {
-    code: '263A',
-    emoji: '☺',
+    emoji: '🙂',
     name: 'smiling face',
     category: 'Smileys & Emotion (face-affection)',
     group: 'Smileys & Emotion',
