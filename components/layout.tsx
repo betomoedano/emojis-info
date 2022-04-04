@@ -17,7 +17,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
       </Head>
-      <div className="max-w-6xl mx-auto my-8">{children}</div>
+      <div className="max-w-6xl mx-auto my-8 p-5">{children}</div>
     </React.Fragment>
   );
 };

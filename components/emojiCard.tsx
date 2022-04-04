@@ -30,7 +30,9 @@ const EmojiCard: React.FunctionComponent<EmojiCardProps> = ({
         >
           {emoji}
         </span>
-        <p className="text-center font-bold text-text-primary">{name}</p>
+        <p className="text-center font-bold text-text-primary">
+          {name.length > 15 ? name.slice(0, 15) + '...' : name}
+        </p>
         <button
           onClick={() => setIsOpen(true)}
           className="text-blue-500 text-sm pt-3"
@@ -83,7 +85,7 @@ const EmojiCard: React.FunctionComponent<EmojiCardProps> = ({
                 <div className="mt-2">
                   <div className="flex justify-center">
                     <span
-                      className=" text-8xl md:text-7xl mb-4 "
+                      className=" text-8xl md:text-9xl mb-4 "
                       role={'img'}
                       aria-label={emoji}
                     >
