@@ -7,8 +7,9 @@ import CategoryCard from '../components/categoryCard';
 import Footer from '../components/footer';
 
 const Home: NextPage = () => {
+  const [currentSearch, setCurrentSearch] = React.useState('');
   const [filteredEmojis, setFilteredEmojis] = React.useState(
-    emojisData.slice(0, 1000)
+    emojisData.slice(0, 500)
   );
 
   function handleFilterByCategory(category: string) {
@@ -17,6 +18,18 @@ const Home: NextPage = () => {
         emoji.group.toUpperCase().includes(category.toUpperCase())
       )
     );
+  }
+
+  function handleFilterBySearch(search: string) {
+    if (search.length > 0) {
+      setFilteredEmojis(
+        emojisData.filter((emoji) =>
+          emoji.name.toUpperCase().includes(search.toUpperCase())
+        )
+      );
+    } else {
+      setFilteredEmojis(emojisData.slice(0, 500));
+    }
   }
 
   return (
@@ -31,55 +44,53 @@ const Home: NextPage = () => {
             id="name"
             type="text"
             placeholder="Search for an emoji"
+            onChange={(e) => handleFilterBySearch(e.target.value)}
           />
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
           <CategoryCard
             handleFilter={handleFilterByCategory}
             emoji="😀"
-            subgroup={'Smileys'}
-            group={'Smileys & People'}
+            group={'Smileys & Emotion'}
+          />
+          <CategoryCard
+            handleFilter={handleFilterByCategory}
+            emoji="👨🏻"
+            group={'People & Body'}
           />
           <CategoryCard
             handleFilter={handleFilterByCategory}
             emoji="🐶"
-            subgroup="animal"
             group={'Animals & Nature'}
           />
           <CategoryCard
             handleFilter={handleFilterByCategory}
             emoji="🍔"
-            subgroup={'Food'}
             group={'Food & Drink'}
           />
           <CategoryCard
             handleFilter={handleFilterByCategory}
             emoji="⚽️"
-            subgroup="Activities"
             group="Activities"
           />
           <CategoryCard
             handleFilter={handleFilterByCategory}
             emoji="🏨"
-            subgroup="travel"
             group={'Travel & Places'}
           />
           <CategoryCard
             handleFilter={handleFilterByCategory}
             emoji="💡"
-            subgroup="objects"
             group="Objects"
           />
           <CategoryCard
             handleFilter={handleFilterByCategory}
             emoji="⚛️"
-            subgroup="symbols"
             group="Symbols"
           />
           <CategoryCard
             handleFilter={handleFilterByCategory}
             emoji="🚩"
-            subgroup="flag"
             group="Flags"
           />
         </div>

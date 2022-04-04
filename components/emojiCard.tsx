@@ -104,10 +104,10 @@ const EmojiCard: React.FunctionComponent<EmojiCardProps> = ({
                     {' '}
                     <span className="font-bold">Group:</span> {group}{' '}
                   </p>
-                  <p className="text-md text-gray-500 mb-2">
+                  {/* <p className="text-md text-gray-500 mb-2">
                     {' '}
                     <span className="font-bold">Subgroup:</span> {subgroup}{' '}
-                  </p>
+                  </p> */}
                 </div>
                 <div className="flex justify-center mt-4">
                   <button

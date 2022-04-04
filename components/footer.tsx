@@ -3,7 +3,7 @@ import Layout from './layout';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#f1f1f1] p-10">
+    <footer className="border-t border-gray-300 p-10">
       <div className="max-w-5xl mx-auto">
         <p className="text-center">
           Made with{' '}
