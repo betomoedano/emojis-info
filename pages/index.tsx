@@ -1,8 +1,8 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import emojisData from '../data/emojis';
 import Layout from '../components/layout';
+import List from '../components/list';
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +18,7 @@ const Home: NextPage = () => {
           placeholder="Name"
         />
       </div>
+      <List emojis={emojisData} />
     </Layout>
   );
 };

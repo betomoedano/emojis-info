@@ -1,10 +1,18 @@
 import * as React from 'react';
-import { EmojiCardProps } from './emojiCard';
+import EmojiCard, { EmojiCardProps } from './emojiCard';
 
-interface EmojiListProps {
+export interface EmojiListProps {
   emojis: EmojiCardProps[];
 }
 
 const List: React.FunctionComponent<EmojiListProps> = ({ emojis }) => {
-  return <React.Fragment></React.Fragment>;
+  return (
+    <React.Fragment>
+      {emojis.map((emoji, index) => {
+        return <EmojiCard key={index} {...emoji} />;
+      })}
+    </React.Fragment>
+  );
 };
+
+export default List;

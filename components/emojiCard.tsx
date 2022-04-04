@@ -23,3 +23,5 @@ const EmojiCard: React.FunctionComponent<EmojiCardProps> = ({
     </React.Fragment>
   );
 };
+
+export default EmojiCard;
