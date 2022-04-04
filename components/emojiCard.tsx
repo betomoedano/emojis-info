@@ -20,6 +20,7 @@ const EmojiCard: React.FunctionComponent<EmojiCardProps> = ({
   return (
     <React.Fragment>
       <h1 className="text-5xl">{emoji}</h1>
+      <p>{name}</p>
     </React.Fragment>
   );
 };
